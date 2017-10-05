@@ -1,0 +1,348 @@
+html,body {
+	font-family: 'Open Sans', sans-serif;
+	font-size:100%;
+	background: #f44336; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f44336 0%,#8f0222 50%,#7b0009 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f44336), color-stop(50%,#8f0222), color-stop(100%,#7b0009)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f44336 0%,#8f0222 50%,#7b0009 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f44336 0%,#8f0222 50%,#7b0009 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f44336 0%,#8f0222 50%,#7b0009 100%); /* IE10+ */
+	background: linear-gradient(to top,  #f44336 0%,#8f0222 50%,#7b0009 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0171f', endColorstr='#126072',GradientType=0 ); /* IE6-9 */
+  background-repeat: no-repeat;
+  height: auto;
+}
+body a {
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;/*#7B0009*/
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+.container {
+    width: 90%;
+}
+
+.top-title{
+  margin-top: 4%;
+}
+
+.ancho{
+  width: 80%;
+  background-color: #f44336;
+}
+
+.btn:visited, .btn-large:visited {
+    background-color: #f44336;
+}
+
+.btn:hover, .btn-large:hover {
+    background-color: #7b0009;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #f44336;
+}
+
+.page-footer h5 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.page-footer ul li a {
+    color: #ecf0f1;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.page-footer ul li {
+    color: #ecf0f1;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.page-footer ul li a:hover {
+    color: #f44336;
+}
+
+.card .card-content .card-title {
+  word-wrap: break-word;
+}
+
+nav ul a:hover {
+    background-color: #000;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 16px;
+    color:#6E6E6E;  /*color de texto, opciones select*/
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+.dropdown-content {
+  transition: height 0.5 ease;
+}
+.dropdown-content li {
+    clear: both;
+    color: rgba(0,0,0,0.87);
+    cursor: pointer;
+    min-height: 50px;
+    line-height: 1.5rem;
+    width: 100%;
+    text-align: left;
+    text-transform: none;
+    background-color: #CBCBCB; /*Fondo opciones select*/  
+}
+
+.dropdown2-style{
+  width: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  display: block;
+}
+
+.disable{
+  color: rgba(0,0,0,0.26);
+  border-bottom: 1px dotted rgba(0,0,0,0.26);
+}
+
+
+.telecom2{
+    padding: 3% 10% 0% 16%; /* margen con valores: arriba - derecha - abajo - izquierda */
+    width:95%;
+   
+  }
+
+.telecom1{
+    padding: 3% 1% 0% 1%; /* margen con valores: arriba - derecha - abajo - izquierda */
+    width:100%;
+    height:100%;
+   
+  }
+
+  .btn_form {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.btn_submit{
+  background-color:#6E6E6E;
+  padding: .5rem;
+  margin: .5rem 0;
+  border: none;
+  border-bottom: solid #C8C8C8 .2rem;
+  transition: all .5s;
+}
+
+#link_registro{
+
+  color:#6E6E6E;
+}
+
+#link_registro:hover{
+  color:red;
+  cursor:pointer;
+}
+
+
+/*segundo formulario*/
+
+#formulario_f{
+  width:650px;
+  margin:20px auto;
+  text-align:center;
+  position:relative;
+
+}
+
+#formulario_f fieldset{
+  background:white;
+  border:0 none;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+
+  box-shadow:0 0 15px 1px rgba(0,0,0, 0.4);
+  padding:20px 30px;
+
+  box-sizing: border-box;
+  width:80%;
+  margin:0 10%;
+
+}
+
+#formulario_f .acao{
+  width:150px;
+  background:#7F0404;
+  color:white;
+  text-transform:uppercase;
+  font-weight:bold;
+  padding:12px 0;
+  float:center;
+  margin-right:5%;
+  margin-bottom:3%;
+
+
+}
+
+#formulario_f .acao:hover{
+  background:#BF2929;
+  cursor:pointer;
+}
+
+#formulario_f fieldset:not(:first-of-type){
+  display:none;
+
+}
+
+#formulario_f input, #formulario_f textarea{ 
+  padding:10px;
+  border:1px solid rgba(38,128,101, 0.9);
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  outline:none;
+  box-sizing:border-box;
+  width:100%;
+}
+
+#button{
+  padding:10px;
+  border:1px solid rgba(38,128,101, 0.9);
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  outline:none;
+  box-sizing:border-box;
+  width:100%;
+  text-align: center;
+
+  }
+
+#formulario_f h2{
+  font:22px "Trebuchet MS", tahoma, arial;
+  color:black;
+  width:100%;
+  float:left;
+  text-align:left;
+  margin-bottom:4%;
+}
+
+#formulario_f #progreso{
+  margin-bottom:30px;
+  overflow:hidden;
+
+  counter-reset: step;
+}
+
+#formulario_f #progreso li{
+  list-style-type:none;
+  color:white;
+  font-weight:bold;
+  text-transform:uppercase;
+  font-size:14px;
+  float:left;
+  width:33.33%;
+  position:relative;
+
+}
+
+#formulario_f #progreso li:before{
+  content: counter(step);
+  counter-increment: step;
+  width:20px;
+  display:block;
+  line-height:20px;
+  background:white;
+  color:#333;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+
+  margin:0 auto 10px auto;
+
+}
+
+#formulario_f #progreso li:after{
+  content:'';
+  width:100%;
+  background:white;
+  height:5px;
+  position:absolute;
+  top:9px;
+  left:-50%;
+  z-index:-1;
+}
+
+#formulario_f #progreso li:first-child:after{
+  content:none;
+}
+
+#formulario_f #progreso li.activo:before, #formulario_f #progreso li.activo:after{
+  background: rgba(222,90,90,0.9);
+  color:white;
+  text-shadow:0 1px 0;
+}
+
+label{
+  color:black;
+  float:left;
+}
+
+/*Sección de Avisos */
+.avisos{
+  align-content: left;
+  border:solid 3px #373737;
+  width:60%;
+  height:60%;
+  margin-bottom: 1%
+ 
+}
+
+.contavisos{
+  width: 800px;
+  height: 520px;
+  padding: 20px;
+  border:solid 1px #999;
+  margin:auto;
+}
+
+#slider{
+  position: relative;
+  width: 60%;
+  height:  60%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#slider > div{
+  position: absolute;
+  width:60%;
+  height: 60%;
+}
+
+
+iframe{
+  align-content: center;
+  width:600px;
+  height:300px;
+  margin-left:2%;
+  color-border:green;
+
+}
+
+
+th, td {
+    background-color: #212121; 
+    text-align: left;
+    color: white;
+}
+

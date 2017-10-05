@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>CURSOS TELECOM</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script languaje="JavaScript" type="text/javascript" src="js/function.js"></script>
+
+    <script>
+            $(document).ready(function(){
+                $('select').material_select();
+                });
+    </script>
+    <script>
+        function habilitar(obj){
+            var op= document.getElementById("alum_q").value;
+            frm=obj.form;
+
+            if(op==1){
+                $('#nc').show();
+                $('#curp').hide();
+
+            }
+
+            else if (op==2){
+                $('#nc').hide();
+                $('#curp').show();
+            }
+
+            else{
+                $('#nc').hide();
+                $('#curp').hide();
+            }
+        }
+
+    </script>
+        <script>
+        function habilita(obj){
+            var op2=document.getElementById("dependencia").value;
+            frm=obj.form;
+
+            if(op2==200){
+                $('#plant').show();
+                $('#carr').hide();
+                $('#otro').hide();
+            }
+            else if(op2==210){
+                $('#otro').show();
+                $('#carr').hide();
+                $('#plant').hide();
+            }
+            else{
+                $('#plant').hide();
+                $('#otro').hide();
+                $('#carr').hide();
+            }     
+        }
+    </script>
+
+    <script>
+        function plan(obj){
+            var plan=document.getElementById("plantel").value;
+            frm=obj.form;
+            if(plan==1){
+                    $('#carr').show();
+            }
+            else $('#carr').hide();
+
+        }
+    </script>
+
+<script type="text/javascript">      //Comprueba que el campo sean solo letras
+        function validaLetra(e) { // 1
+        tecla = (document.all) ? e.keyCode : e.which; // 2
+        if (tecla==8) return true; // 3
+        patron =/[\ÑñA-Za-z\s]/; // 4
+        te = String.fromCharCode(tecla); // 5
+        return patron.test(te); // 6
+        }
+    </script>
+
+    <script>
+        function validaNum(e){     //Comprueba que el campo sean solo numeros
+            tecla = (document.all) ? e.keyCode : e.which;
+
+            //Tecla de retroceso para borrar, siempre la permite
+            if (tecla==8){
+                return true;
+            }
+                
+            // Patron de entrada, en este caso solo acepta numeros
+            patron =/[0-9]/;
+            tecla_final = String.fromCharCode(tecla);
+            return patron.test(tecla_final);
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+    <img src="img/header3.png" alt="" class="telecom1" id="telecom1">
+	<form id="formulario_f" method="post" action="Registro.jsp">
+		<ul id="progreso">
+			<li class="activo"> Datos Personales</li>
+			<li> Datos Dependencia</li>
+			<li> Creación de Usuario</li>
+		</ul>
+
+		<fieldset>
+			<h2> Datos Personales </h2>
+
+            <input maxlength="40" name="names" placeholder="&#128100; Nombre(s)" id="name" type="text" class="input" required autofocus onkeypress="return validaLetra(event)">
+            <input maxlength="30" name="lastname" placeholder="Apellido Paterno" id="app" type="text" class="input" required onkeypress="return validaLetra(event)">
+            <input maxlength="30" name="lastname2" placeholder="Apellido Materno" id="apm" type="text" class="input" onkeypress="return validaLetra(event)">
+            <select name="alum_q" id="alum_q" onchange="habilitar(this)">
+                        <option value=""><b>¿Eres Alumno de la UNAM?</b></option>
+                        <option value="1"><b>Sí</b></option>
+                        <option value="2"><b>No</b></option>
+            </select>
+        
+            <input maxlength="9" name="nc" placeholder="&#127380; Número de Cuenta" id="nc" type="text" class="input" style="display:none" onkeypress="return validaNum(event)" >  
+            <input maxlength="18" name="curp" placeholder="&#127380; CURP" id="curp" type="text" class="input" style="display:none">
+            <input name="tel"  placeholder="&#128222; Teléfono" id="tel" type="tel" class="input" required onkeypress="return validaNum(event)">
+            <input name="cel"  placeholder="&#128241; Celular" id="cel" type="tel" class="input" onkeypress="return validaNum(event)">
+
+            <select name="opcion_titulacion" id="opcion_t" required>
+                        <option value=""><b>&#128220; Modalidad de Programa</b></option>
+                        <option value="No"><b>Sin Opción a Titulación</b></option>
+                        <option value="Si"><b>Con Opción a Titulación</b></option>
+            </select>
+
+            <input maxlength="50" name="email" id="email" placeholder="&#9993; Email" type="email" class="input" required>
+            <input maxlength="50" name="email2" id="email2" placeholder="&#9993; Confirma tu Email" type="email" class="input" required>
+
+            <input type="button" id="button" name="inicio" value="INICIO" class="inicio acao" onClick="location.href='./index.jsp'">
+
+            <input type="submit" name="next" value="CONTINUAR" class="next acao">
+
+   
+		</fieldset>
+		<fieldset>
+			<h2> Datos Dependencia </h2>
+			<select name="dependencia" id="dependencia" onchange="habilita(this)">
+                        <option value=""><b>&#128188; Dependencia</b></option>
+                        <option value="200"><b>UNAM</b></option>
+                        <option value="201"><b>IPN</b></option>
+                        <option value="202"><b>UAM</b></option>
+                        <option value="210"><b> Otro </b></option>
+            </select>
+            <input placeholder="Otro" name="otro" id="otro" type="text" class="input" style="display:none">
+
+            <div id="plant" style="display:none">
+                <select name="plantel" id="plantel" onchange="plan(this)">
+                        <option value=""><b>&#127891; Plantel</b></option>
+                        <option value="1"><b>Facultad de Ingeniería</b></option>
+                        <option value="2"><b>F.E.S. Acatlán</b></option>
+                        <option value="3"><b>F.E.S. Aragón</b></option>
+                        <option value="4"><b>F.E.S. Cuautitlán</b></option>
+                        <option value="5"><b>F.E.S. Iztacala</b></option>
+                        <option value="6"><b>F.E.S. Zaragoza</b></option>
+                </select>
+            </div>
+
+            <div id="carr" style="display:none" >
+            <select name="carrera" id="carrera">
+                        <option value=""><b>&#9998; Carrera</b></option>
+                        <option value="1"><b> Ing. Eléctrica</b></option>
+                        <option value="2"><b> Ing. en Computación</b></option>
+                        <option value="3"><b> Ing. en Telecomunicaciones</b></option>
+                        <option value="4"><b> Ing. Mecatrónica</b></option>
+            </select>
+            </div>
+
+
+                    <input name="ubicacion" id="ubicacion" placeholder="&#128681; Ubicación" class="validate" class="input">
+
+                    <select name="semestre" id="semestre" required>
+                        <option value=""><b>&#9997; Selecciona tu Semestre</b></option>
+                        <option value="7"><b>7</b></option>
+                        <option value="8"><b>8</b></option>
+                        <option value="9"><b>9</b></option>
+                        <option value="10"><b>10</b></option>
+                        <option value="11"><b>11</b></option>
+                        <option value="12"><b>12</b></option>
+                        <option value="13"><b>13</b></option>
+                        <option value="14"><b>14</b></option>
+                        <option value="15"><b>15</b></option>
+                    </select>
+
+                    <input name="avance_cred" id="creditos" placeholder="&#128221; Avance de Créditos. Ejemplo:85.3" class="validate" required class="input">
+
+                        <input type="button" id="button" name="prev" value="REGRESAR" class="prev acao">
+
+                        <input type="submit" name="next" value="CONTINUAR" class="next2 acao">
+		</fieldset>
+		<fieldset>
+		<h2> Creación de Usuario </h2>
+			<input name="user" placeholder="&#128100; Usuario" id="user" type="text" class="input" required>
+                    <input name="password" placeholder="&#128273; Contraseña" id="password" type="password" class="input" required>
+                    <input name="pass2" placeholder="&#128273; Confirma tu contraseña" id="pass2" type="password" class="input" required>
+
+                        <input type="button"  id="button" name="prev" value="REGRESAR" class="prev acao">
+
+                        <input type="submit" name="submit" value="REGISTRAR" class="reg acao">
+		</fieldset>
+	</form>
+    </div>
+
+    <!--
+      FOOTER
+    -->
+    <div class="container">
+    <footer class="page-footer grey darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col m4">
+                    <h5 class="red-text">DIVISIÓN DE INGENIERÍA ELÉCTRICA</h5>
+                    <ul>
+                        <li><a href="http://www.fi-b.unam.mx/">Sitio</a></li>
+                        <li><a href="#"></a>Académicos</li>
+                    </ul>
+                </div>
+                <div class="col m4">
+                    <h5 class="red-text">DEPARTAMENTO DE TELECOMUNICACIONES</h5>
+                    <ul>
+                        <li><a href="http://telecom.fi-b.unam.mx/">Sitio</a></li>
+                        <li><a href="http://www.cursostelecom.unam.mx/">Diplomados</a></li>
+                    </ul>
+                </div>      
+                <div class="col m4">
+                    <h5 class="red-text">FACULTAD DE INGENIERÍA</h5>
+                    <ul>
+                        <li><a href="http://www.ingenieria.unam.mx/">Sitio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <ul><li>© 2017 <a href="https://www.unam.mx/"> Universidad Nacional Autónoma de México</a></li></ul>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+</body>
+</html>
